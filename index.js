@@ -14,6 +14,8 @@ const getData = ()=>{
     .then(data => displayCards(data));
 }
 
+getData()
+
 dailyBtn.addEventListener("click", ()=> {
     selectedTimeframe = "daily"
     timeFrame = "Day"
