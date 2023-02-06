@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Time tracking dashboard</title>
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <div class="cards-grid" id="cardGrid">
+            <div class="profile-card-container">
+                <div class="user-info-container">
+                    <div class="profile-pic-container">
+                        <img src="./images/image-jeremy.png" alt="Profile Picture">
+                    </div>
+                    <div class="profile-text-container">
+                        <span>Report for</span>
+                        <p>Jeremy Robson</p>
+                    </div>
+                </div>
+                
+                <div class="selector-container">
+                    <div id="dailyBtn" class="btn not-selected">Daily</div>
+                    <div id="weeklyBtn" class="btn">Weekly</div>
+                    <div id="monthlyBtn" class="btn not-selected">Monthly</div>
+                </div>
+            </div>
+            <div id="activitiesCard"></div>
+        </div>
+    </main>
+    
+</body>
+<script src="./index.js"></script>
+</html>

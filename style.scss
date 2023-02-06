@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+$ff-main: 'Rubik', sans-serif;
+
+$blue: hsl(246, 80%, 60%);
+$lightOrange:hsl(15, 100%, 70%);
+$softBlue:hsl(195, 74%, 62%);
+$lightRed: hsl(348, 100%, 68%);
+$limeGreen: hsl(145, 58%, 55%);
+$violet: hsl(264, 64%, 52%);
+$softYellow: hsl(43, 84%, 65%);
+$veryDarkBlue: hsl(226, 43%, 10%);
+$darkBlue: hsl(235, 46%, 20%);
+$desaturatedBlue: hsl(235, 45%, 61%);
+$paleBlue: hsl(236, 100%, 87%);
+$white: hsl(0, 0%, 100%);
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background: $veryDarkBlue ;
+    min-height: 100vh;
+    padding: 2em;
+    color: $white;
+    font-family: $ff-main;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.cards-grid{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "main"
+    "cards";
+
+    @media screen and (min-width:800px) {
+        display: flex;
+        gap: 2em;
+    }
+
+    .profile-card-container{
+        background: $darkBlue;
+        border-radius: 15px;
+        max-width: 255px;
+        grid-area: main;
+        margin-bottom:2em ;
+
+    }
+
+    #activitiesCard{
+        display: flex;
+        flex-direction: column;
+        gap: 5em;
+
+
+        @media screen and (min-width:800px) {
+            grid-area: cards;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1em 1em;
+            grid-template-areas: 
+            "work play study"
+            "exercise social selfcare";
+        }
+
+    }
+
+    #card0{
+        grid-area: work;
+    }
+
+    #card1{
+        grid-area: play;
+    }
+
+    #card2{
+        grid-area: study;
+    }
+
+    #card3{
+        grid-area: exercise;
+    }
+
+    #card4{
+        grid-area: social;
+    }
+
+    #card5{
+        grid-area: selfcare;
+    }
+
+    
+}
+
+.user-info-container{
+    height: 70%;
+    background: $blue;
+    padding: 2em ;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    span{
+        font-weight: 300;
+        font-size: .7rem;
+    }
+
+    p{
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: .5em 0;
+    }
+
+    .profile-pic-container{
+        width: 78px;
+        
+    
+        img{
+            width: 100%;
+            border: 2px solid $white;
+            border-radius: 50%;
+        }
+    }
+
+    @media screen and (min-width:800px) {
+        flex-direction: column;
+        align-items: flex-start;
+        
+    
+        p{
+            font-size: 2.8rem;
+        }
+
+        .profile-pic-container{
+            width: 78px;
+            margin: 1em 0 2em 0;
+        }
+}}
+
+.selector-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.125rem;
+    padding:2em;
+
+    @media screen and (min-width:800px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.not-selected{
+    opacity: .5;
+}
+
+.card-container{
+    position: relative;   
+}
+
+.card-background-container{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    z-index: -1;
+    overflow: hidden;
+
+    img{
+        position: absolute;
+        right: 10px;
+        top: -10px;
+    }
+}
+
+    
+.work{
+    background: $lightOrange;   
+}
+
+.play{
+    background: $softBlue;
+}
+
+.study{
+    background: $lightRed;
+}
+
+.exercise{
+    background: $limeGreen;
+}
+
+.social{
+    background: $violet;
+}
+
+.self-care{
+    background: $softYellow ;
+}
+
+
+
+
+.card-text-container{
+    cursor: pointer;
+    position: relative;
+    top:50px;
+    padding: 2em 1em;
+    background: $darkBlue;
+    height: 200px;
+    border-radius: 15px;
+    
+    &:hover{
+        background: $desaturatedBlue;
+    }
+    .card-header{
+        font-size: 1.125rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    .card-text{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+
+        .card-text-hours{
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .card-text-last{
+            font-size: .9rem;
+            opacity: .5;
+        }
+    }
+}

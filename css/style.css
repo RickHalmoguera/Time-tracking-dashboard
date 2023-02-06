@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: hsl(226deg, 43%, 10%);
+  min-height: 100vh;
+  padding: 2em;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "main" "cards";
+}
+@media screen and (min-width: 800px) {
+  .cards-grid {
+    display: flex;
+    gap: 2em;
+  }
+}
+.cards-grid .profile-card-container {
+  background: hsl(235deg, 46%, 20%);
+  border-radius: 15px;
+  max-width: 255px;
+  grid-area: main;
+  margin-bottom: 2em;
+}
+.cards-grid #activitiesCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+@media screen and (min-width: 800px) {
+  .cards-grid #activitiesCard {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em 1em;
+    grid-template-areas: "work play study" "exercise social selfcare";
+  }
+}
+.cards-grid #card0 {
+  grid-area: work;
+}
+.cards-grid #card1 {
+  grid-area: play;
+}
+.cards-grid #card2 {
+  grid-area: study;
+}
+.cards-grid #card3 {
+  grid-area: exercise;
+}
+.cards-grid #card4 {
+  grid-area: social;
+}
+.cards-grid #card5 {
+  grid-area: selfcare;
+}
+
+.user-info-container {
+  height: 70%;
+  background: hsl(246deg, 80%, 60%);
+  padding: 2em;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.user-info-container span {
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+.user-info-container p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0.5em 0;
+}
+.user-info-container .profile-pic-container {
+  width: 78px;
+}
+.user-info-container .profile-pic-container img {
+  width: 100%;
+  border: 2px solid hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+}
+@media screen and (min-width: 800px) {
+  .user-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .user-info-container p {
+    font-size: 2.8rem;
+  }
+  .user-info-container .profile-pic-container {
+    width: 78px;
+    margin: 1em 0 2em 0;
+  }
+}
+
+.selector-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.125rem;
+  padding: 2em;
+}
+@media screen and (min-width: 800px) {
+  .selector-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.not-selected {
+  opacity: 0.5;
+}
+
+.card-container {
+  position: relative;
+}
+
+.card-background-container {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  z-index: -1;
+  overflow: hidden;
+}
+.card-background-container img {
+  position: absolute;
+  right: 10px;
+  top: -10px;
+}
+
+.work {
+  background: hsl(15deg, 100%, 70%);
+}
+
+.play {
+  background: hsl(195deg, 74%, 62%);
+}
+
+.study {
+  background: hsl(348deg, 100%, 68%);
+}
+
+.exercise {
+  background: hsl(145deg, 58%, 55%);
+}
+
+.social {
+  background: hsl(264deg, 64%, 52%);
+}
+
+.self-care {
+  background: hsl(43deg, 84%, 65%);
+}
+
+.card-text-container {
+  cursor: pointer;
+  position: relative;
+  top: 50px;
+  padding: 2em 1em;
+  background: hsl(235deg, 46%, 20%);
+  height: 200px;
+  border-radius: 15px;
+}
+.card-text-container:hover {
+  background: hsl(235deg, 45%, 61%);
+}
+.card-text-container .card-header {
+  font-size: 1.125rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.card-text-container .card-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+.card-text-container .card-text .card-text-hours {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.card-text-container .card-text .card-text-last {
+  font-size: 0.9rem;
+  opacity: 0.5;
+}/*# sourceMappingURL=style.css.map */
