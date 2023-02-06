@@ -6,7 +6,7 @@ const monthlyBtn =  document.getElementById("monthlyBtn")
 let selectedTimeframe = "weekly";
 let pathCurrent 
 let pathPrevious
-let timeFrame
+let timeFrame = "Week"
 
 const getData = ()=>{
     fetch('./data/data.json')
