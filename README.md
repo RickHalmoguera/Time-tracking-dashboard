@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/time-tracking-app-with-fetch-and-responsive-layout-EuaSyib4fH))
-- [Live Site URL]([https://your-live-site-url.com](https://rickhalmoguera.github.io/Time-tracking-dashboard/))
+- [Solution URL](https://www.frontendmentor.io/solutions/time-tracking-app-with-fetch-and-responsive-layout-EuaSyib4fH))
+- [Live Site URL](https://rickhalmoguera.github.io/Time-tracking-dashboard/))
 
 ## My process
 
