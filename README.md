@@ -11,7 +11,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -28,7 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot.jpg)
+![](./images/screenshot.png)
 
 ### Links
 
@@ -44,59 +43,95 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Fetch Method.
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This time cards were created from Js, getting the data from the datsa.json.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+As you can see in the code below. I started by checking which timeframe the user had chosen with a forEach , in order to display the correct text and information. After injecting the code to the DOM I have verified which card was showing, in order to use the correct image and background color. This was done with an If Else block.
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const displayCards = (data)=>{
+
+    data.forEach(element => {
+
+        if(selectedTimeframe == "weekly"){
+            pathCurrent = element.timeframes.weekly.current
+            pathPrevious = element.timeframes.weekly.previous
+        }else if(selectedTimeframe == "daily"){
+            pathCurrent = element.timeframes.daily.current
+            pathPrevious = element.timeframes.daily.previous
+        }else if(selectedTimeframe == "monthly"){
+            pathCurrent = element.timeframes.monthly.current
+            pathPrevious = element.timeframes.monthly.previous
+        }
+
+        activitiesCard.innerHTML +=
+        `<div class="card-container" id="card${data.indexOf(element)}">
+        <div class="card-background-container" id="bgColor${data.indexOf(element)}">
+            <img id="bgImg${data.indexOf(element)}"alt="">
+        </div>
+
+        <div class="card-text-container">
+            <div class="card-header">
+                <span>${element.title}</span>
+                <img src="./images/icon-ellipsis.svg" alt="ellipsis">
+            </div>
+            <div class="card-text">
+                <span class="card-text-hours">
+                ${pathCurrent}hrs
+                </span>
+                <span class="card-text-last">Last ${timeFrame} - ${pathPrevious}hrs </span>
+            </div>
+        </div>
+    </div>` 
+
+        if(element.title == "Work"){
+            const bgImg0 = document.getElementById("bgImg0")
+            const bgColor0 = document.getElementById("bgColor0")
+
+            bgImg0.src="./images/icon-work.svg"
+            bgColor0.classList.add("work")
+        }else if(element.title == "Play"){
+            const bgImg1 = document.getElementById("bgImg1")
+            const bgColor1 = document.getElementById("bgColor1")
+
+            bgImg1.src="./images/icon-play.svg"
+            bgColor1.classList.add("play")
+        }else if(element.title == "Study"){
+            const bgImg2 = document.getElementById("bgImg2")
+            const bgColor2 = document.getElementById("bgColor2")
+
+            bgImg2.src="./images/icon-study.svg"
+            bgColor2.classList.add("study")
+        }else if(element.title == "Exercise"){
+            const bgImg3 = document.getElementById("bgImg3")
+            const bgColor3 = document.getElementById("bgColor3")
+
+            bgImg3.src="./images/icon-exercise.svg"
+            bgColor3.classList.add("exercise")
+        }else if(element.title == "Social"){
+            const bgImg4 = document.getElementById("bgImg4")
+            const bgColor4 = document.getElementById("bgColor4")
+
+            bgImg4.src="./images/icon-social.svg"
+            bgColor4.classList.add("social")
+        }else if(element.title == "Self Care"){
+            const bgImg5 = document.getElementById("bgImg5")
+            const bgColor5 = document.getElementById("bgColor5")
+
+            bgImg5.src="./images/icon-self-care.svg"
+            bgColor5.classList.add("self-care")
+        }
+        
+    });
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [JavaScript Array forEach()](https://www.w3schools.com/jsref/jsref_foreach.asp) - This helped me to understand the FOrEach sintaxis and use it in the displaying of the background and images of the cards.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Github - [Ricardo Halmoguera](https://github.com/RickHalmoguera)
+- Frontend Mentor - [@RickHalmoguera](https://www.frontendmentor.io/profile/RickHalmoguera)
